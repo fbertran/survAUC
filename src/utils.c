@@ -262,8 +262,8 @@ void C_km_weight( double *surv, double *time, double *status, double *wt, double
 	for(i=0; i < *n_time; i++){
 		dead=0; at_risk=0;
 		for(j=0; j < *n_time; j++){
-			at_risk += (entry[i] <= time[j]) && (time[i] <= time[j]) * wt[i];
-			dead += (entry[i] <= time[j]) && (time[i] == time[j]) && (status[i])*wt[i];
+			at_risk += ((entry[i] <= time[j]) && (time[i] <= time[j])) * wt[i];
+			dead += ((entry[i] <= time[j]) && (time[i] == time[j]) && (status[i]))*wt[i];
 		}
 		current = current * (1.0 - (double)dead / (double)at_risk);
 		surv[i] = current;
@@ -346,7 +346,7 @@ void My_matprod(double *x, int nrx, int ncx, double *y, int nry, int ncy, double
 				}
 		} else
 			F77_CALL(dgemm)(transa, transb, &nrx, &ncy, &ncx, &one,
-							x, &nrx, y, &nry, &zero, z, &nrx);
+							x, &nrx, y, &nry, &zero, z, &nrx FCONE FCONE);
     } else /* zero-extent operations should return zeroes */
 		for(i = 0; i < nrx*ncy; i++) z[i] = 0;
 }
@@ -362,7 +362,7 @@ void survM_tcrossprod(double *x, int nrx, int ncx,
     double one = 1.0, zero = 0.0;
     if (nrx > 0 && ncx > 0 && nry > 0 && ncy > 0) {
 		F77_CALL(dgemm)(transa, transb, &nrx, &nry, &ncx, &one,
-						x, &nrx, y, &nry, &zero, z, &nrx);
+						x, &nrx, y, &nry, &zero, z, &nrx FCONE FCONE);
     } else { /* zero-extent operations should return zeroes */
 		int i;
 		for(i = 0; i < nrx*nry; i++) z[i] = 0;

@@ -1,3 +1,3 @@
-# penalizedSVM .1.3
+# survAUC 1.1-0
 
-* Package fixes requested by CRAN and change of maintainer to prevent the package from being removed from the CRAN.
+* Package fixed as requested by CRAN to avoid been archived.
