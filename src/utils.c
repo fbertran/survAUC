@@ -61,7 +61,7 @@ double d_mean(double *X, int n)
  */
 
 
-void step_eval_R(double *s_new, double *t_new, double *s, double *t, int *n_new, int *n)
+void C_step_eval_R(double *s_new, double *t_new, double *s, double *t, int *n_new, int *n)
 {
 	int i,j,optim;
 	
@@ -254,7 +254,7 @@ void rsort_xyzv(double *x, double *y, double *z, double *indx, int n)
 /* weighted KM - from risksetROC */
 
 
-void km_weight( double *surv, double *time, double *status, double *wt, double *entry, int *n_time){
+void C_km_weight( double *surv, double *time, double *status, double *wt, double *entry, int *n_time){
 	int i, j, dead, at_risk;
 	rsort_with_x(time,status,*n_time);
 	
@@ -274,7 +274,7 @@ void km_weight( double *surv, double *time, double *status, double *wt, double *
 /* Kaplan-Meier estimation  */
 
 
-void km_Daim( double *surv, double *time, double *status, int *n_time){
+void C_km_Daim( double *surv, double *time, double *status, int *n_time){
 	int i, j, dead, at_risk;
 	rsort_with_x(time,status,*n_time);
 	
@@ -372,7 +372,7 @@ void survM_tcrossprod(double *x, int nrx, int ncx,
 
 
 
-SEXP survfit_cox( SEXP LP, SEXP TIME, SEXP EVENT, SEXP N_TIME, SEXP N_LP, SEXP LPNEW, SEXP N_LPNEW)
+SEXP C_survfit_cox( SEXP LP, SEXP TIME, SEXP EVENT, SEXP N_TIME, SEXP N_LP, SEXP LPNEW, SEXP N_LPNEW)
 {
 	int *n_time = INTEGER(N_TIME);
 	int *n_lp = INTEGER(N_LP);

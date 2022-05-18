@@ -1,3 +1,4 @@
+HowToCheck.R
 genlogo.R
 .gitignore
 ^codecov\.yml$
@@ -6,7 +7,12 @@ genlogo.R
 ^figure$
 ^pkgdown$
 ^Meta$
-#^doc$
+^doc$
+
+man/figures/fa-asterisk.svg
+man/figures/Cairo-fa-asterisk.svg
+man/figures/Cairo-fa-asterisk.pdf
+
 #All packages
 ^.*\.Rproj$
 ^\.Rproj\.user$
@@ -18,28 +24,13 @@ genlogo.R
 ^cache*$
 ^README_cache*$
 #If README too big, not on CRAN but only on git
-^man/figures*$
+#^man/figures*$
 ^README\.Rmd$
 #^README\.md$
 #Specific
-^fullrespdf*$
-^inst/animation*$
 ^articles*$
-^review*$
-^\.github$
-
-#For the cached chunks of the vignettes
-^vignettes.*cache$
-#For the image outputs of the vignettes
-^vignettes.*files$
-#Specific
-^animation.gif$
-^evolution_example*$
-^add_data
-^doc$
-^Meta$
-^cran-comments[.].*$
-
+^old_files*$
+^LICENSE*
 #Vignette cache
 ^cran-comments[.].*$
 ^vignettes/.*[.](pdf|PDF)$
@@ -47,4 +38,6 @@ genlogo.R
 ^vignettes/[.]install_extras$
 ^vignettes/.*_cache$
 ^vignettes/.*_files$
+^\.github$
+
 
