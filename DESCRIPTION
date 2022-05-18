@@ -1,13 +1,13 @@
 Package: survAUC
 Version: 1.1-0
-Title: Estimators of prediction accuracy for time-to-event data
+Title: Estimators of Prediction Accuracy for Time-to-Event Data
 Author: Sergej Potapov, Werner Adler and Matthias Schmid.
-Description: The package provides a variety of functions to estimate
+Description: Provides a variety of functions to estimate
         time-dependent true/false positive rates and AUC curves from a
         set of censored survival data.
 Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr>
 Depends: R (>= 2.6.0), 
 Imports: survival, rms
-Date: 18.05.2022
+Date: 2022-05-18
 License: GPL-2
 Repository: CRAN
