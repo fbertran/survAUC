@@ -3,7 +3,7 @@
 ##############################################################
 ## Integrated AUC
 ##############################################################
-# AUC	- vector of AUC´s
+# AUC	- vector of AUC's
 # times	- vector of times
 # S		- vector of survival probability
 # tmax	- maximum timepoint
