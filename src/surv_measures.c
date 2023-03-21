@@ -38,7 +38,7 @@ void C_GHCI(double *lp, int *n_lp, double *ans){
 
 
 /* Calculation of censoring weights Cox-Model*/
-void cens_weights(double *times, int *n_times, double *stime, double *event, int *n_stime,
+void C_cens_weights(double *times, int *n_times, double *stime, double *event, int *n_stime,
 				  double *stime_new, double *event_new, int *n_stime_new, double *weights)
 {
 	int i, j;
@@ -106,7 +106,7 @@ SEXP C_predError(SEXP TIME, SEXP EVENT, SEXP N_TIME,
 		event[i] = 1. - REAL(EVENT)[i];
 	}
 	
-	cens_weights(REAL(TH_TIME), INTEGER(N_TH_TIME), REAL(TIME), event, INTEGER(N_TIME),
+	C_cens_weights(REAL(TH_TIME), INTEGER(N_TH_TIME), REAL(TIME), event, INTEGER(N_TIME),
 				 REAL(TIME_NEW), REAL(EVENT_NEW), INTEGER(N_TIME_NEW), weights);
 	Free(event);
 	
@@ -308,11 +308,11 @@ void C_XO(double *stime, double *event, int *n_stime, double *lp, double *lp0, d
 
 
 
-
 /* Calculation of 'C-Statistic' suggest by Uno */
 
-void C_UnoC(double *stime, double *event, int *n_stime, double *new_stime, double *new_event, int *new_n_stime,
-		  double *lp, double *tau, int *n_tau, double *CStat)
+void C_UnoC(double *stime, double *event, int *n_stime, double *new_stime, 
+            double *new_event, int *new_n_stime, double *lp, double *tau, 
+            int *n_tau, double *CStat)
 {
 	double *surv;
 	surv = Calloc(*n_stime, double);

@@ -15,6 +15,13 @@
 
 #define CALLDEF(name, n)  {#name, (DL_FUNC) &name, n}
 
+void C_cens_weights(double *times, int *n_times, double *stime, double *event, int *n_stime,
+                    double *stime_new, double *event_new, int *n_stime_new, double *weights);
+
+static R_NativePrimitiveArgType C_cens_weights_t[] = {
+  REALSXP, INTSXP, REALSXP, REALSXP, INTSXP, REALSXP, REALSXP, INTSXP, REALSXP 
+};
+
 static R_NativePrimitiveArgType C_partLCox_t[] = {
   REALSXP, REALSXP, INTSXP, REALSXP, INTSXP, REALSXP 
 };
@@ -39,11 +46,11 @@ static R_NativePrimitiveArgType C_UnoC_t[] = {
   REALSXP, REALSXP, INTSXP, REALSXP, REALSXP, INTSXP, REALSXP, REALSXP, INTSXP, REALSXP
 };
 
-static R_NativePrimitiveArgType C_sens_uno_t[] = {
+static R_NativePrimitiveArgType C_spec_uno_t[] = {
   REALSXP, REALSXP, REALSXP, REALSXP, REALSXP, INTSXP, INTSXP, INTSXP
 };
 
-static R_NativePrimitiveArgType C_spec_uno_t[] = {
+static R_NativePrimitiveArgType C_sens_uno_t[] = {
   REALSXP, REALSXP, REALSXP, REALSXP, REALSXP, REALSXP, REALSXP, REALSXP, INTSXP, INTSXP, INTSXP, INTSXP
 };
 
@@ -52,7 +59,7 @@ static R_NativePrimitiveArgType C_auc_uno_t[] = {
 };
 
 static R_NativePrimitiveArgType C_int_auc_t[] = {
-  REALSXP, REALSXP, REALSXP, REALSXP, REALSXP, INTSXP, INTSXP, INTSXP, REALSXP, INTSXP
+  REALSXP, REALSXP, REALSXP, REALSXP, INTSXP, INTSXP, REALSXP, INTSXP, REALSXP
 };
 
 static R_NativePrimitiveArgType C_Hung_Chiang_t[] = {
@@ -76,6 +83,7 @@ static R_NativePrimitiveArgType C_step_eval_R_t[] = {
 };
 
 static const R_CMethodDef cMethods[] = {
+  {"C_cens_weights", (DL_FUNC) &C_cens_weights, 9, C_cens_weights_t},
   {"C_partLCox", (DL_FUNC) &C_partLCox, 6, C_partLCox_t},
   {"C_partLCoxIndiv", (DL_FUNC) &C_partLCoxIndiv, 5, C_partLCoxIndiv_t},
   {"C_begg", (DL_FUNC) &C_begg, 11, C_begg_t},
