@@ -8,6 +8,8 @@ Description: Provides a variety of functions to estimate
 Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr>
 Depends: R (>= 2.6.0), 
 Imports: survival, rms
+URL: https://github.com/fbertran/survAUC
+BugReports: https://github.com/fbertran/survAUC/issues
 Date: 2023-03-21
 License: GPL-2
 Repository: CRAN
