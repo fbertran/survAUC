@@ -13,6 +13,8 @@ Description: Provides a variety of functions to estimate
         set of censored survival data.
 Depends: R (>= 2.6.0), 
 Imports: survival, rms
+URL: https://github.com/fbertran/survAUC
+BugReports: https://github.com/fbertran/survAUC/issues
 Date: 2024-09-06
 License: GPL-2
 Repository: CRAN
