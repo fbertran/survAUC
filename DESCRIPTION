@@ -1,15 +1,20 @@
 Package: survAUC
-Version: 1.2-0
+Version: 1.3-0
 Title: Estimators of Prediction Accuracy for Time-to-Event Data
-Author: Sergej Potapov, Werner Adler and Matthias Schmid.
+Authors@R: c(
+	person(given = "Sergej", family= "Potapov", role = c("aut")),
+	person(given = "Werner", family= "Adler", role = c("aut")),
+	person(given = "Matthias", family= "Schmid", role = c("aut")),
+	person(given = "Frederic", family= "Bertrand", role = c("cre", "aut"), email = "frederic.bertrand@utt.fr", comment = c(ORCID = "0000-0002-0837-8281")))
+Author: Sergej Potapov [aut], Werner Adler [aut], Matthias Schmid [aut], Frederic Bertrand [cre, aut] (<https://orcid.org/0000-0002-0837-8281>)
+Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr>
 Description: Provides a variety of functions to estimate
         time-dependent true/false positive rates and AUC curves from a
         set of censored survival data.
-Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr>
 Depends: R (>= 2.6.0), 
 Imports: survival, rms
 URL: https://github.com/fbertran/survAUC
 BugReports: https://github.com/fbertran/survAUC/issues
-Date: 2023-03-21
+Date: 2024-09-06
 License: GPL-2
 Repository: CRAN
